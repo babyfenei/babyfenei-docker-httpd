@@ -1,5 +1,13 @@
 FROM polinux/supervisor:centos
 
+MAINTAINER Fenei <babyfenei@qq.com>
+
+# Build-time metadata as defined at http://label-schema.org
+ARG BUILD_DATE
+ARG VERSION
+LABEL build_version="babyfenei/docker-httpd version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+
+
 ENV \
       LOG_LEVEL="info" \
       DEFAULT_CONFIG="true"
