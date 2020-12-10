@@ -8,15 +8,13 @@ ARG VERSION
 LABEL build_version="babyfenei/docker-httpd version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 
-ENV \
-      LOG_LEVEL="info" \
-      DEFAULT_CONFIG="true"
+ENV LOG_LEVEL="info" \
+    DEFAULT_CONFIG="true"
 
 
 
-RUN \
-  curl -o /etc/yum.repos.d/CentOS-Base.repo -O http://mirrors.aliyun.com/repo/Centos-7.repo && \
-  yum install -y epel-release
+RUN curl -o /etc/yum.repos.d/CentOS-Base.repo -O http://mirrors.aliyun.com/repo/Centos-7.repo && \
+    yum install -y epel-release
 
 RUN yum install -y \
     iproute python-setuptools hostname inotify-tools yum-utils which jq && \
